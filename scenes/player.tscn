@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://cdgkvkjbjqn1c"]
+[gd_scene load_steps=2 format=3 uid="uid://cdgkvkjbjqn1c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u8vuu"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u8vuu")
+animation = &"idle_down"
