@@ -1,4 +1,5 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.3-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
+![GitHub top language](https://img.shields.io/github/languages/top/Chaotic-Legend/Tutorial?logo=godotengine)
 
 # Tutorial #
 [Intro to 2D Character Movement - Godot Beginner Tutorial](https://www.youtube.com/watch?v=kw1iI69kW6o)
