@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var max_speed = 100
+var max_speed = 500
 var last_direction := Vector2(1,0)
 
 func _physics_process(delta):
@@ -10,13 +10,28 @@ func _physics_process(delta):
 	
 	if direction.length() > 0:
 		last_direction = direction
+		play_walk_animation(direction)
+		print(direction)
+	else:
+		play_idle_animation(last_direction)
+		print(direction)
 		
-	func play_walk_animation(direction):
-		if direction.x > 0:
-			$AnimatedSprite2D.play("walk_right")
-		elif direction.x < 0:
-			$AnimatedSprite2D.play("walk_left")
-		elif direction.y > 0:
-			$AnimatedSprite2D.play("walk_down")
-		elif direction.y < 0:
-			$AnimatedSprite2D.play("walk_up")
+func play_walk_animation(direction):
+	if direction.x > 0:
+		$AnimatedSprite2D.play("walk_right")
+	elif direction.x < 0:
+		$AnimatedSprite2D.play("walk_left")
+	elif direction.y > 0:
+		$AnimatedSprite2D.play("walk_down")
+	elif direction.y < 0:
+		$AnimatedSprite2D.play("walk_up")
+
+func play_idle_animation(direction):
+	if direction.x > 0:
+		$AnimatedSprite2D.play("idle_right")
+	elif direction.x < 0:
+		$AnimatedSprite2D.play("idle_left")
+	elif direction.y > 0:
+		$AnimatedSprite2D.play("idle_down")
+	elif direction.y < 0:
+		$AnimatedSprite2D.play("idle_up")
